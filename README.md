@@ -7,6 +7,6 @@ First commited author and date is extracted from git log, and used to generate J
 
 I think such scripts are useful for someone else.
 (I found maven has functionality to insert license header into java source files today.
-If I find existing useful scripts to insert copyright into java codes, I report them here.)
+If I find existing useful scripts to insert copyright into java codes, I report them here instead of writing codes.)
 
-I will complete required scripts this year.
+Anyway, I will complete this project this year.
