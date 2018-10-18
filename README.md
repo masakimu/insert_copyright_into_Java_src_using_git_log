@@ -2,5 +2,11 @@
 
 Just started.
 
-I planed to write simple python scripts to insert copyrites and license into Java source codes stored in [Mass++ ver4](https://github.com/masspp/mspp4) repository using git log.
+I planed to write simple python scripts to insert copyright into Java source codes comitted in [Mass++ ver4](https://github.com/masspp/mspp4) repository. 
+First commited author and date is extracted from git log, and used to generate JavaDoc style copyright.
+
+I think such scripts are useful for someone else.
+(I found maven has functionality to insert license header into java source files today.
+If I find existing useful scripts to insert copyright into java codes, I report them here.)
+
 I will complete required scripts this year.
