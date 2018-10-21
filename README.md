@@ -22,7 +22,7 @@ I used format of license like this:
 >   $ git log --name-only > git_log_with_filenames.txt
 4. run extract_author_date_from_git_log.py to create author information lists
 >   $ python extract_author_date_from_git_log.py git_log_with_filenames.txt > list_file_author_date.txt
-5. run license_headers.py
->   $ python license_headers.py list_file_author_date.txt 'BSD 3-Clause License' 'Copyright' > update_headers.log
+5. run update_license_headers.py
+>   $ python update_license_headers.py list_file_author_date.txt 'BSD 3-Clause License' 'Copyright' > update_headers.log
   
   
