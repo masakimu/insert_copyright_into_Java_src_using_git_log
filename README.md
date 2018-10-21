@@ -1,7 +1,5 @@
 # insert_copyright_into_Java_src_using_git_log
 
-NOT COMPLETED: I will complete this soon.
-
 
 Simple python scripts to insert copyright into Java source codes.
 I used them to update license headers of comitted source codes in [Mass++ ver4](https://github.com/masspp/mspp4) repository. 
@@ -26,6 +24,4 @@ Following format/structure of license header is assumed:
 4. run extract_author_date_from_git_log.py to create author information lists
 >   $ python extract_author_date_from_git_log.py git_log_with_filenames.txt > list_file_author_date.txt
 5. run update_license_headers.py
->   $ python update_file_header.py list_file_author_date.txt &lt;start string of license header&gt; &lt;end string&gt; > update_headers.log
-  
-  
+>   $ python update_file_header.py list_file_author_date.txt "BSD 3-Clause License" "Copyright (c) 2018, Mass++ Users Group" > update_headers.log
