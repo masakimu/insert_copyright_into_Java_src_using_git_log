@@ -26,6 +26,6 @@ Following format/structure of license header is assumed:
 4. run extract_author_date_from_git_log.py to create author information lists
 >   $ python extract_author_date_from_git_log.py git_log_with_filenames.txt > list_file_author_date.txt
 5. run update_license_headers.py
->   $ python update_license_headers.py list_file_author_date.txt <start string of license header> <end string> > update_headers.log
+>   $ python update_license_headers.py list_file_author_date.txt "<start string of license header>" "<end string>" > update_headers.log
   
   
