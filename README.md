@@ -11,6 +11,7 @@ I used format of license like this:
 > <start string of license header e.g. 'BSD 3-Clause License'>
 >  
 > @author masakimu
+> 
 > @since 2018
 >  
 >  <end string of license header  e.g. 'Copyright (c) 2018, Mass++ Users Group>
