@@ -5,7 +5,7 @@ Simple python scripts to insert copyright into Java source codes.
 I used them to update license headers of comitted source codes in [Mass++ ver4](https://github.com/masspp/mspp4) repository. 
 
 
-1. Before use the scripts, default license headers should be inserted into source codes by [License Maven Plugin](http://code.mycila.com/license-maven-plugin/).
+1. Before using these scripts, initial license headers should be inserted into source codes. I used [License Maven Plugin](http://code.mycila.com/license-maven-plugin/) for Java program.
 
 Following format/structure of license header is assumed:
 > <start string of license header e.g. 'BSD 3-Clause License'>
