@@ -18,10 +18,10 @@ Following format/structure of license header is assumed:
 >  
 >  <end string of license header  e.g. 'Copyright (c) 2018, Mass++ Users Group>
 
-2. place scripts at top folder of your git repository, and change current directory to the top folder.
+2. place all python scripts at the top folder of your git repository, and change current directory to the folder.
 3. create git log with file names:
 >   $ git log --name-only > git_log_with_filenames.txt
-4. run extract_author_date_from_git_log.py to create author information lists
+4. run extract_author_date_from_git_log.py to generate file author information list
 >   $ python extract_author_date_from_git_log.py git_log_with_filenames.txt > list_file_author_date.txt
-5. run update_license_headers.py
+5. run update_file_headers.py to update license header of source codes using file author information list
 >   $ python update_file_header.py list_file_author_date.txt "BSD 3-Clause License" "Copyright (c) 2018, Mass++ Users Group" > update_headers.log
