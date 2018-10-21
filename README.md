@@ -12,7 +12,7 @@ I used format of license like this:
 >  
 >  <end string of license header  e.g. 'Copyright (c) 2018, Mass++ Users Group>
   
-2. place extract_author_date_from_git_log.py at top folder of your git repository
+2. place scripts at top folder of your git repository
 3. run extract_author_date_from_git_log.py to create author information lists
 >   $ python extract_author_date_from_git_log.py > list_file_author_date.txt
 4. run license_headers.py
