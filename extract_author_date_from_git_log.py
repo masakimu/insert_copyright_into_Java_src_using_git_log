@@ -1,3 +1,4 @@
+import sys
 
 class author_date():
     def __init__(self, author, date):
@@ -57,8 +58,16 @@ def extract_file_author_date_from_first_git_commit_log(logfile):
     return file_author_date
 
 if __name__ == '__main__':
+    argv=sys.argv
+    argc=sys.argc
+
+    if (argc!=2):
+        print 'Usage: python extract_author_date_from_git_log.py <Git Log File with File Names>'
+        print 'to generate git log: git log --name-only > logfile_name.txt'
+        quit()
+        
+    logfile = argv[1]
     
-    logfile = 'git_log_with_filenames.txt'
     author_tobe_replaced = {'sub_string@tobe.replaced.jp':'Full String <after@replaced.jp>'}
 
     file2author_date = extract_file_author_date_from_first_git_commit_log(logfile)
