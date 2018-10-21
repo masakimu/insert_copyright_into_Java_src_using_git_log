@@ -1,40 +1,27 @@
 import sys
 
-class author_date():
-    def __init__(self, author, date):
-        self.author = author
-        self.date = date
-
-    def update_author(self, author):
-        self.author  = author
-
-    def update_date(self, date):
-        self.date = date
-
-    def __str__(self):
-        return '\t'.join([self.author, self.date])
-
+from file_author_date import FileAuthorDate
 
 def extract_file_author_date_from_first_git_commit_log(logfile):
     '''
     logfile: path of git log with --name-only option
         how to create: git log --name-only > logfile1
     
-    Returns: 
-        file_author_date: dictionary
-            key: file name
-            value: author_date instance
+    Yield: instance of file_author_date
     '''
 
-    file_author_date = {}
-    
     in_log_record = False
     after_commit_message = False
     
     with open(logfile, 'r') as f:
         for line in f:
             if line.find('Author:') == 0:
-                author = line.strip()[8:]
+                end = len(line)
+                pos_mail_addr= line.find('<')  # remove mail address from author name
+                if pos_mail_addr > -1:
+                    end = pos_mail_addr
+                author = line.strip()[8:end]
+
                 in_log_record = True
                 continue
 
@@ -47,19 +34,18 @@ def extract_file_author_date_from_first_git_commit_log(logfile):
 
             if in_log_record:
                 if after_commit_message and len(line)>0 and line[0]!=' ' and line[0]!='\n': 
-                    file = line.strip()
-                    file_author_date[file]= author_date(author, date)
+                    file_name = line.strip()
+                    yield FileAuthorDate(file_name, author, date )
 
                 if line.find('Date:')==0:
                     date = line.strip()[8:]
                 if line.find('    ')==0: # to detect indent of commit message
                     after_commit_message=True
 
-    return file_author_date
 
 if __name__ == '__main__':
     argv=sys.argv
-    argc=sys.argc
+    argc=len(argv)
 
     if (argc!=2):
         print 'Usage: python extract_author_date_from_git_log.py <Git Log File with File Names>'
@@ -70,10 +56,9 @@ if __name__ == '__main__':
     
     author_tobe_replaced = {'sub_string@tobe.replaced.jp':'Full String <after@replaced.jp>'}
 
-    file2author_date = extract_file_author_date_from_first_git_commit_log(logfile)
-
-    for file, a_d in file2author_date.items():
+    for f_a_d in extract_file_author_date_from_first_git_commit_log(logfile):
         for ar in author_tobe_replaced:
-            if a_d.author.find(ar)>-1:
-                a_d.update_author( author_tobe_replaced[ar] )
-        print( '\t'.join([file, str(a_d)]))
+            if f_a_d.author.find(ar)>-1:
+                f_a_d.update_author( author_tobe_replaced[ar] )
+        print( str(f_a_d))
+

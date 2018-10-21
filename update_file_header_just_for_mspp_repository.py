@@ -11,23 +11,13 @@ import os
 import shutil
 import csv
 
-import dateutil.parser
+from file_author_date import FileAuthorDate
 
 prefix_author = '@author'
 prefix_since = '@since'
 
 str_license_start = 'BSD 3-Clause License'
 str_license_end = 'Copyright (c) 2018, Mass++ Users Group'
-
-class FileAuthorDate():
-    def __init__(self, file, author, date):
-        self.file =file
-        self.author  = author
-        # convert 'Wed May 30 20:29:47 2018 +0900' to '2018-05-30 20:29:47 +9000'
-        self.date = str(dateutil.parser.parse(date))
-       
-    def __str__(self):
-        return '\t'.join([self.file, self.author, self.date])
 
 def reader_fileauthordate(csvreader):
     for row in csvreader:
