@@ -48,8 +48,8 @@ if __name__ == '__main__':
     argc=len(argv)
 
     if (argc!=2):
-        print 'Usage: python extract_author_date_from_git_log.py <Git Log File with File Names>'
-        print 'to generate git log: git log --name-only > logfile_name.txt'
+        print( 'Usage: python extract_author_date_from_git_log.py <Git Log File with File Names>')
+        print( 'to generate git log: git log --name-only > logfile_name.txt')
         quit()
         
     logfile = argv[1]
