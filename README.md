@@ -1,4 +1,4 @@
-Deprecated:  I used customized version of Git Sub-Plugin of License Maven Plugin (https://github.com/masakimu/license-maven-plugin). I'm happy with it now for Java project.
+Deprecated:  I used License Maven Plugin (https://github.com/mycila/license-maven-plugin). I'm happy with it now for Java project.
 
 
 # insert_copyright_into_Java_src_using_git_log
